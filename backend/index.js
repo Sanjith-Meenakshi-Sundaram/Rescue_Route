@@ -1,3 +1,5 @@
+require('dotenv').config(); // ✅ Load .env first
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -28,7 +30,7 @@ app.use(cors());
 app.use(express.json());
 
 // ==== MongoDB Connection ====
-mongoose.connect('mongodb://localhost:27017/rescue-db', {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
