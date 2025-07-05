@@ -47,7 +47,7 @@ const UserReports = () => {
   const fetchReports = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:3001/api/reports');
+      const response = await axios.get('https://rescue-route.onrender.com/api/reports');
       let data = response.data;
 
       if (userLocation) {
@@ -100,7 +100,7 @@ const UserReports = () => {
     };
 
     try {
-      await axios.post('http://localhost:3001/api/reports', payload);
+      await axios.post('https://rescue-route.onrender.com/api/reports', payload);
       fetchReports();
       setFormData({
         title: '',

@@ -21,7 +21,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/signup", {
+      const response = await fetch("https://rescue-route.onrender.com/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
