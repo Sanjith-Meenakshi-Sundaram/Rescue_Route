@@ -20,7 +20,7 @@ const server = http.createServer(app);
 // ==== Socket.IO Setup ====
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: process.env.CLIENT_URL || 'http://localhost:3000',
     methods: ['GET', 'POST'],
   },
 });
@@ -212,9 +212,9 @@ app.post('/api/products/:id/buy', async (req, res) => {
 
 
 // ==== SERVER START ====
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running at port ${PORT}`);
 });
 
 
